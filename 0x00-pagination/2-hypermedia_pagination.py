@@ -38,7 +38,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """Retrieves a page of data.
+        """This function retrieves a page of data.
         """
         assert type(page) == int and type(page_size) == int
         assert page > 0 and page_size > 0
@@ -49,7 +49,7 @@ class Server:
         return data[start:end]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
-        """Retrieves information about a page.
+        """this function retrieves information about a page.
         """
         page_data = self.get_page(page, page_size)
         start, end = index_range(page, page_size)
