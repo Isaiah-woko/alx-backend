@@ -3,7 +3,7 @@
 
 from flask_babel import Babel
 from typing import Union, Dict
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, g
 
 
 class Config:
@@ -40,7 +40,7 @@ def before_request() -> None:
     """Performs some routines before each request's resolution.
     """
     user = get_user()
-    Flask.g.user = user
+    g.user = user
 
 
 @babel.localeselector
